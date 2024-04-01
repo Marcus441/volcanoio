@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+// This is the main component of the application. It is the parent component of all other components.
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Home from './Home';
+
 import './App.css';
+import LandingPage from './LandingPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/home" element={<Home />} />
+          {/* <Route path="/volcanoList" element={<VolcanoList />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} /> */}
+        </Routes>
+      </div>
+    </Router>
 
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
   );
 }
 
