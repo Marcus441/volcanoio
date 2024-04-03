@@ -1,14 +1,12 @@
-
-
-import Navbar from './Navbar';
+import Volcanoes from "./Volcanoes";
+import FetchData from "./FetchData";
 
 function Home() {
     return (
-        <div className="Home">
-            <Navbar />
-            <div className="content">
+            <div className="Home">
+
             </div>
-        </div>
+
     );
 }
 

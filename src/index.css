@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -21,11 +20,20 @@ code {
   font-family: "Quicksand";
   color: #333;
 }
+
+.content {
+  max-width: 800px;
+  margin: 0px auto;
+  padding: 20px;
+}
+
+/* navbar */
+
 .navbar {
   padding: 20px;
   display: flex;
   align-items: center;
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
   border-bottom: 1px solid #f2f2f2;
 }
@@ -37,4 +45,24 @@ code {
   margin-left: 16px;
   text-decoration: none;
   padding: 6px;
+}
+
+/* home */
+.volcano-preview {
+  border-bottom: 1px solid #fafafa;
+  padding: 10px 16px;
+  margin: 20px 0;
+}
+
+.volcano-preview:hover {
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.volcano-preview h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.volcano-preview a {
+ text-decoration: none;
 }
