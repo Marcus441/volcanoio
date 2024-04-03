@@ -1,24 +1,28 @@
-// This is the main component of the application. It is the parent component of all other components.
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Home from './Home';
-
-import './App.css';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import LandingPage from './LandingPage';
+import Navbar from './Navbar';
+import Home from './Home';
+import VolcanoList from './VolcanoList';
+
 
 function App() {
+
   return (
+
     <Router>
       <div className="App">
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/home" element={<Home />} />
-          {/* <Route path="/volcanoList" element={<VolcanoList />} />
-            <Route path="/register" element={<Register />} />
+        <div className="content">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path='/home' element={<Home />} />
+            <Route path="/volcano-list" element={<VolcanoList />} /> 
+            {/* <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} /> */}
-        </Routes>
+          </Routes>
+        </div>
       </div>
     </Router>
-
   );
 }
 
