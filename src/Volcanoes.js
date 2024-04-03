@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 
 const Volcanoes = (prop) => {
-    const data = prop.volcanoes;
+    const data = [...prop.volcanoes].sort((a, b) => a.name.localeCompare(b.name));
     const name = data.name;
 
     return ( 
