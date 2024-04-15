@@ -1,6 +1,6 @@
 import Volcanoes from "../Components/Volcanoes";
 import SearchBar from "../Components/SearchBar";
-import FetchData from "../Hooks/FetchData";
+import useFetch from "../Hooks/useFetch";
 import { buildURL } from "../Utils/utils";
 
 import { useState } from "react";
@@ -11,7 +11,7 @@ function VolcanoList() {
 
     const url = buildURL('http://4.237.58.241:3000/volcanoes', { country, populatedWithin });
     
-    const { data, pending, error } = FetchData(country ? url.toString() : null);
+    const { data, pending, error } = useFetch(country ? url.toString() : null);
 
     const handleSearch = (searchTerm, filterTerm) => {
         setCountry(searchTerm);

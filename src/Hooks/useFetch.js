@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const FetchData = (url) => {
+const useFetch = (url) => {
     const [data, setData] = useState(null);
     const [pending, setPending] = useState(false);
     const [error, setError] = useState(null);
@@ -39,4 +39,4 @@ const FetchData = (url) => {
     return { data, pending, error };
 }
 
-export default FetchData;
+export default useFetch;
