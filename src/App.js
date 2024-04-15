@@ -1,9 +1,8 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import LandingPage from './LandingPage';
-import Navbar from './Navbar';
-import Home from './Home';
-import VolcanoList from './VolcanoList';
-
+import Navbar from './Components/Navbar';
+import Home from './Pages/Home';
+import LandingPage from './Pages/LandingPage';
+import VolcanoList from './Pages/VolcanoList';
 
 function App() {
 
