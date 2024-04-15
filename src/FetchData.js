@@ -2,10 +2,13 @@ import { useState, useEffect } from "react";
 
 const FetchData = (url) => {
     const [data, setData] = useState(null);
-    const [pending, setPending] = useState(true);
+    const [pending, setPending] = useState(false);
     const [error, setError] = useState(null);
 
     useEffect(() => {
+        if (!url) {
+            return;
+        }
         const abortCont = new AbortController();
 
         fetch(url, { signal: abortCont.signal })
