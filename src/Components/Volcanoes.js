@@ -6,7 +6,7 @@ const Volcanoes = (prop) => {
     const name = data.name;
 
     return ( 
-        <div className="volcano-list">
+        <div className="volcano-table">
             <h2>{name}</h2>
             {data.map((volcano) => (
                 <div className="volcano-preview" key={volcano.id}>

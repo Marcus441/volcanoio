@@ -20,9 +20,9 @@ function VolcanoList() {
 
     return (
         <div className="volcano-list">
-            <SearchBar onSearch={handleSearch}></SearchBar>
             {!country && <h2>Please search for a country!</h2>}
             {country && <h2>Results for {country}</h2>}
+            <SearchBar onSearch={handleSearch}></SearchBar>
             {error && <div>{error}</div>}
             {pending && <div>Loading...</div>}
             {data && <Volcanoes volcanoes={data} />}
