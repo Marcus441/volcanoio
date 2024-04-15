@@ -1,10 +1,9 @@
-import Volcanoes from "./Components/Volcanoes";
-import Search from "./Components/SearchBar";
-import FetchData from "./Hooks/FetchData";
-import { buildURL } from "./Utils/utils";
+import Volcanoes from "../Components/Volcanoes";
+import SearchBar from "../Components/SearchBar";
+import FetchData from "../Hooks/FetchData";
+import { buildURL } from "../Utils/utils";
 
 import { useState } from "react";
-import SearchBar from "../Components/SearchBar";
 
 function VolcanoList() {
     const [country, setCountry] = useState('');
