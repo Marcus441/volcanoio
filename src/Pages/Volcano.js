@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import useFetch from "../Hooks/useFetch";
 
-import Map from "../Components/Map";
+import VolcanoMap from "../Components/VolcanoMap";
 
 const Volcano = () => {
     const { id } = useParams();
@@ -20,7 +20,7 @@ const Volcano = () => {
                     <p>Last Erupted: {volcano.last_eruption}</p>
                     <p>Summit: {volcano.summit} m</p>
                     <p>Elevation: {volcano.elevation} ft</p>
-                    <Map></Map> 
+                    <VolcanoMap lat={volcano.latitude} lng={volcano.longitude}></VolcanoMap> 
                 </div>
             )}
         </div>
