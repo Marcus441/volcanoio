@@ -1,5 +1,7 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 import { useState, useMemo } from "react";
+
 import { AgGridReact } from 'ag-grid-react'; // AG Grid Component
 import "ag-grid-community/styles/ag-grid.css"; // Mandatory CSS required by the grid
 import "ag-grid-community/styles/ag-theme-quartz.css"; // Optional Theme applied to the grid
@@ -7,6 +9,9 @@ import "ag-grid-community/styles/ag-theme-quartz.css"; // Optional Theme applied
 
 const Volcanoes = (prop) => {
     const data = prop.volcanoes;
+
+    const navigate = useNavigate();
+    
     const defaultColDef = useMemo(() => {
         return {
             resizable: false,
@@ -24,10 +29,7 @@ const Volcanoes = (prop) => {
     return (
         <div
             className="ag-theme-quartz" // applying the grid theme
-            style={{
-                height: "500px",
-                width: "100%",
-            }}
+
         >
             <AgGridReact
                 // styling
@@ -39,7 +41,9 @@ const Volcanoes = (prop) => {
                 pagination={true} // enable pagination
                 paginationPageSize={10} // how many rows per page
                 paginationPageSizeSelector={[10, 20, 50]} // the user can select the page size
-                
+
+                // router
+                onRowClicked={row => navigate(`/volcano/${row.data.id}`)}
                 // data
                 rowData={data}
                 columnDefs={colDefs}

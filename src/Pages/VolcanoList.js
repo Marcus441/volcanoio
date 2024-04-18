@@ -1,10 +1,13 @@
+import { useState } from "react";
+
 import Volcanoes from "../Components/Volcanoes";
 import SearchBar from "../Components/SearchBar";
+import DropDown from "../Components/DropDown";
+
 import useFetch from "../Hooks/useFetch";
+
 import { buildURL } from "../Utils/utils";
 
-import { useState } from "react";
-import DropDown from "../Components/DropDown";
 
 function VolcanoList() {
     const [country, setCountry] = useState('');
@@ -16,6 +19,7 @@ function VolcanoList() {
 
     const handleSearch = (searchTerm) => {
         setCountry(searchTerm);
+        setpopulatedWithin(populatedWithin);
     }
     return (
         <div className="volcano-list">
