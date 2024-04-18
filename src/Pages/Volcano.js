@@ -20,9 +20,9 @@ const Volcano = () => {
                     <p>Last Erupted: {volcano.last_eruption}</p>
                     <p>Summit: {volcano.summit} m</p>
                     <p>Elevation: {volcano.elevation} ft</p>
+                    <Map></Map> 
                 </div>
             )}
-            {volcano && <Map volcano={{lat: volcano.latitude, lng: volcano.longitude}} />}
         </div>
 
     );
