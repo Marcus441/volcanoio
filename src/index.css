@@ -41,6 +41,7 @@ code {
 .navbar .links {
   margin-left: auto;
 }
+
 .navbar a {
   margin-left: 16px;
   text-decoration: none;
@@ -64,5 +65,33 @@ code {
 }
 
 .volcano-preview a {
- text-decoration: none;
+  text-decoration: none;
+}
+
+/* volcano list */
+
+.volcano-list {
+  padding: 20px;
+
+}
+
+.volcano-list h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.search-params {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.search-params label {
+  font-size: 16px;
+  margin-right: 16px;
+}
+
+.search-params .DropDown {
+  width: 200px;
+
 }

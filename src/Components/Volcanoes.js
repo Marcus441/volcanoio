@@ -30,13 +30,19 @@ const Volcanoes = (prop) => {
             }}
         >
             <AgGridReact
+                // styling
+                animateRows={false}
                 defaultColDef={defaultColDef}
+                domLayout="autoHeight"
+
+                // pagination
                 pagination={true} // enable pagination
                 paginationPageSize={10} // how many rows per page
                 paginationPageSizeSelector={[10, 20, 50]} // the user can select the page size
+                
+                // data
                 rowData={data}
                 columnDefs={colDefs}
-                domLayout="autoHeight"
             />
         </div>
 
