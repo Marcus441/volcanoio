@@ -3,8 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
     const location = useLocation();
-
     const [showComponent, setShowComponent] = useState(true)
+
     useEffect(() => {
         if (location.pathname === '/') {
             setShowComponent(false)
@@ -21,8 +21,8 @@ const Navbar = () => {
                 <div className="links">
                     <Link to="/home">Home</Link>
                     <Link to="/volcano-list">Volcano List</Link>
-                    <Link to="/"> Register</Link>
-                    <Link to="/"> Login</Link>
+                    <Link to="/login"> Login</Link>
+                    <Link to="/register"> Register</Link>
                 </div>
             </nav>
         )

@@ -114,3 +114,28 @@ code {
   width: 200px;
 
 }
+
+/* Login */
+
+.login {
+  padding: 20px;
+  display: flex;
+}
+.login h2 {
+  margin-bottom: 20px;
+}
+.login .input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.login .input-group label {
+  font-size: 16px;
+  margin-right: 16px;
+}
+
+.login .input-group input {
+  padding: 6px;
+  flex-grow: 1;
+}
