@@ -7,7 +7,10 @@ const Volcano = () => {
     const { id } = useParams();
     const url = 'http://4.237.58.241:3000/volcano/' + id;
 
-    const { data: volcano, pending, error } = useFetch(url);
+    const token = localStorage.getItem("token");
+
+    const { data: volcano, pending, error } = useFetch(url, token);
+
     return (
         <div className="volcano">
             {error && <div>{error}</div>}
@@ -20,12 +23,12 @@ const Volcano = () => {
                     <p>Last Erupted: {volcano.last_eruption}</p>
                     <p>Summit: {volcano.summit} m</p>
                     <p>Elevation: {volcano.elevation} ft</p>
-                    <VolcanoMap lat={volcano.latitude} lng={volcano.longitude}></VolcanoMap> 
+                    <VolcanoMap lat={volcano.latitude} lng={volcano.longitude}></VolcanoMap>
+                    <p>{volcano.population_5km}</p>
                 </div>
             )}
         </div>
-
     );
-}
+};
 
 export default Volcano;
