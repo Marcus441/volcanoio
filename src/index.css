@@ -117,25 +117,27 @@ code {
 
 /* Login */
 
-.login {
+.Login-Form {
   padding: 20px;
   display: flex;
+  flex-direction: column;
+  max-width: 400px;
 }
-.login h2 {
+.Login-Form h2 {
   margin-bottom: 20px;
 }
-.login .input-group {
+.Login-Form .input-group {
   display: flex;
   align-items: center;
   margin-bottom: 16px;
 }
 
-.login .input-group label {
+.Login-Form .input-group label {
   font-size: 16px;
   margin-right: 16px;
 }
 
-.login .input-group input {
+.Login-Form .input-group input {
   padding: 6px;
   flex-grow: 1;
 }
