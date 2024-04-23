@@ -9,7 +9,7 @@ const Login = () => {
         authenticate(credentials)
             .then((isAuthenticated) => {
                 if (isAuthenticated) {
-                    navigate('/home');
+                    navigate('/volcano-list');
                 }
             });
     };

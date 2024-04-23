@@ -24,7 +24,6 @@ const Volcano = () => {
                     <p>Summit: {volcano.summit} m</p>
                     <p>Elevation: {volcano.elevation} ft</p>
                     <VolcanoMap lat={volcano.latitude} lng={volcano.longitude}></VolcanoMap>
-                    <p>{volcano.population_5km}</p>
                 </div>
             )}
         </div>
