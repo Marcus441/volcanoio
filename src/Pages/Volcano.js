@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import useFetch from "../Hooks/useFetch";
 
 import VolcanoMap from "../Components/VolcanoMap";
+import PopulationGraph from "../Components/PopulationGraph";
 
 const Volcano = () => {
     const { id } = useParams();
@@ -24,6 +25,11 @@ const Volcano = () => {
                     <p>Summit: {volcano.summit} m</p>
                     <p>Elevation: {volcano.elevation} ft</p>
                     <VolcanoMap lat={volcano.latitude} lng={volcano.longitude}></VolcanoMap>
+                    {
+                        token && (
+                            <PopulationGraph></PopulationGraph>
+                        )
+                    }
                 </div>
             )}
         </div>

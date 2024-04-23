@@ -48,6 +48,10 @@ code {
   padding: 6px;
 }
 
+.navbar a:hover {
+  color: #5e35f1;
+}
+
 /* home */
 .volcano-preview {
   border-bottom: 1px solid #fafafa;

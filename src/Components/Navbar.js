@@ -32,7 +32,7 @@ const Navbar = () => {
                         <Link to="/register"> Register</Link>
                     </>}
                     {
-                        localStorage.getItem("token") && <button onClick={handleLogout}>Logout</button>
+                        localStorage.getItem("token") && <a onClick={handleLogout}>Logout</a>
                     }
                 </div>
             </nav>
