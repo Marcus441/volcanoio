@@ -22,8 +22,6 @@ function App() {
             <Route path="/volcano/:id" element={<Volcano />} /> 
             <Route path="/login" element={<Login/>} />
             <Route path="/register" element={<Register/>} />
-            {/* <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} /> */}
           </Routes>
         </div>
       </div>
