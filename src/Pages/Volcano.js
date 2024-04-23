@@ -10,7 +10,7 @@ const Volcano = () => {
 
     const token = localStorage.getItem("token");
 
-    const { data: volcano, pending, error } = useFetch(url, token);
+    const { data: volcano, pending, error } = useFetch(url);
 
     return (
         <div className="volcano">

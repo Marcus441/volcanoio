@@ -1,6 +1,6 @@
 
 const authenticate = async (credentials) => {
-    const URL = 'http://4.237.58.241:3000/user/login';
+    const URL = 'http://4.237.58.241:3000/user/login2';
     const response = await fetch(URL, {
         method: 'POST',
         headers: {

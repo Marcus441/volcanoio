@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import useAuthToken from "../Hooks/useAuthToken";
 
 const Navbar = () => {
     const location = useLocation();
-    const [showComponent, setShowComponent] = useState(true)
     const navigate = useNavigate();
+    
+    const [showComponent, setShowComponent] = useState(true)
+
+    const token = useAuthToken();
 
     const handleLogout = () => {
         localStorage.removeItem("token");
@@ -27,12 +31,12 @@ const Navbar = () => {
                 <div className="links">
                     <Link to="/home">Home</Link>
                     <Link to="/volcano-list">Volcano List</Link>
-                    {!localStorage.getItem("token") && <>
+                    {!token && <>
                         <Link to="/login"> Login</Link>
                         <Link to="/register"> Register</Link>
                     </>}
                     {
-                        localStorage.getItem("token") && <a onClick={handleLogout}>Logout</a>
+                        token && <a onClick={handleLogout}>Logout</a>
                     }
                 </div>
             </nav>
