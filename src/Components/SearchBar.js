@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import useFetch from '../Hooks/useFetch';
 
 const SearchBar = ({ onSearch }) => {
     const [searchTerm, setSearchTerm] = useState('');
     const { data: countries = [] } = useFetch('http://4.237.58.241:3000/countries') || {};
     const [showSuggestions, setShowSuggestions] = useState(true);
+    const timeoutId = useRef(null);
 
     const handleInputChange = (event) => {
         setSearchTerm(event.target.value);
@@ -14,17 +15,29 @@ const SearchBar = ({ onSearch }) => {
     const handleKeyPress = (event) => {
         if (event.key === 'Enter') {
             handleSearch();
+            setShowSuggestions(false);
         }
+    };
+    const handleBlur = () => {
+        // delay the hiding of the suggestions to allow for the click event of the suggestion to be fired
+        timeoutId.current = setTimeout(() => {
+            setShowSuggestions(false);
+        }, 100);
+    };
+    const handleFocus = () => {
+        clearTimeout(timeoutId.current);
+        setShowSuggestions(true);
     };
 
     const handleSuggestionClick = (suggestion) => {
         setSearchTerm(suggestion);
         setShowSuggestions(false);
+        handleSearch(suggestion);
     };
 
-    const handleSearch = () => {
-        onSearch(searchTerm);
-        console.log('Searching for:', searchTerm);
+    const handleSearch = (term) => {
+        onSearch(term || searchTerm);
+        console.log('Searching for:', term);
     };
 
     const suggestions = searchTerm
@@ -45,6 +58,8 @@ const SearchBar = ({ onSearch }) => {
                     value={searchTerm}
                     onChange={handleInputChange}
                     onKeyDown={handleKeyPress}
+                    onBlur={handleBlur}
+                    onFocus={handleFocus}
 
                 />
 
