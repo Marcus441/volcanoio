@@ -1,17 +1,15 @@
 import LoginForm from '../Components/LoginForm';
 import { useNavigate } from 'react-router-dom';
-import { register } from '../Utils/api';
+import { useContext } from 'react';
+import { AuthContext } from '../Contexts/AuthContext';
 
 const Register = () => {
+    const { signup } = useContext(AuthContext);
     const navigate = useNavigate();
 
-    const handleRegister = (credentials) => {
-        register(credentials)
-            .then((isRegistered) => {
-                if (isRegistered) {
-                    navigate('/login');
-                }
-            });
+    const handleRegister = async (credentials) => {
+        await signup(credentials);
+        navigate('/login');
     };
 
     return (

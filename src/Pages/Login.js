@@ -1,17 +1,15 @@
 import LoginForm from '../Components/LoginForm';
 import { useNavigate } from 'react-router-dom';
-import { authenticate } from '../Utils/api';
+import { useContext } from 'react';
+import { AuthContext } from '../Contexts/AuthContext';
 
 const Login = () => {
+    const { login } = useContext(AuthContext);
     const navigate = useNavigate();
     
-    const handleLogin = (credentials) => {
-        authenticate(credentials)
-            .then((isAuthenticated) => {
-                if (isAuthenticated) {
-                    navigate('/volcano-list');
-                }
-            });
+    const handleLogin = async (credentials) => {
+        await login(credentials);
+        navigate('/volcano-list');
     };
 
     return (

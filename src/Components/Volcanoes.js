@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-import { useState, useMemo } from "react";
+import { useMemo } from "react";
 
 import { AgGridReact } from 'ag-grid-react'; // AG Grid Component
 import "ag-grid-community/styles/ag-grid.css"; // Mandatory CSS required by the grid
@@ -20,11 +20,11 @@ const Volcanoes = (prop) => {
     }, []);
 
 
-    const [colDefs, setColDefs] = useState([
+    const colDefs = [
         { field: "name" },
         { field: "region" },
         { field: "subregion" }
-    ]);
+    ];
 
     return (
         <div

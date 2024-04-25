@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import useAuthToken from "../Hooks/useAuthToken";
+import { AuthContext } from '../Contexts/AuthContext';
 
 const Navbar = () => {
     const location = useLocation();
@@ -8,10 +8,10 @@ const Navbar = () => {
     
     const [showComponent, setShowComponent] = useState(true)
 
-    const token = useAuthToken();
+    const { authToken: token, logout } = useContext(AuthContext);
 
     const handleLogout = () => {
-        localStorage.removeItem("token");
+        logout();
         navigate('/login')
     };
 
