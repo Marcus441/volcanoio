@@ -6,14 +6,15 @@ import { AuthContext } from '../Contexts/AuthContext';
 const Login = () => {
     const { login } = useContext(AuthContext);
     const navigate = useNavigate();
-    
+
     const handleLogin = async (credentials) => {
         await login(credentials);
         navigate('/volcano-list');
     };
 
     return (
-        <LoginForm mode={'Login'} onSubmit={handleLogin}></LoginForm>
+
+            <LoginForm mode={'Login'} onSubmit={handleLogin}></LoginForm>
     );
 }
 

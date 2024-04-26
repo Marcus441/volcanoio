@@ -33,7 +33,6 @@ const Navbar = () => {
                     <Link to="/volcano-list">Volcano List</Link>
                     {!token && <>
                         <Link to="/login"> Login</Link>
-                        <Link to="/register"> Register</Link>
                     </>}
                     {
                         token && <a onClick={handleLogout}>Logout</a>

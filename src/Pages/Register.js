@@ -1,6 +1,6 @@
-import LoginForm from '../Components/LoginForm';
+import RegisterForm from '../Components/RegisterForm';
 import { useNavigate } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { AuthContext } from '../Contexts/AuthContext';
 
 const Register = () => {
@@ -13,7 +13,7 @@ const Register = () => {
     };
 
     return (
-        <LoginForm mode={'Register'} onSubmit={handleRegister}></LoginForm>
+        <RegisterForm onSubmit={handleRegister} ></RegisterForm>
     );
 }
 

@@ -13,6 +13,8 @@ const authenticate = async (credentials) => {
     if (data.token) {
         localStorage.setItem('token', data.token);
         return true;
+    } else if (data.error) {
+        throw new Error(data.message);
     }
     return false;
 };
@@ -32,6 +34,8 @@ const register = async (credentials) => {
     if (data.token) {
         localStorage.setItem('token', data.token);
         return true;
+    } else if (data.error) {
+        throw new Error(data.message);
     }
     return false;
 };
