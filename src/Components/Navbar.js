@@ -29,7 +29,7 @@ const Navbar = () => {
             <nav className="navbar">
                 <header ><h1>Volcano.io</h1></header>
                 <div className="links">
-                    <Link to="/home">Home</Link>
+                    <Link to="/">Home</Link>
                     <Link to="/volcano-list">Volcano List</Link>
                     {!token &&
                         <Link to="/login"> Login</Link>
