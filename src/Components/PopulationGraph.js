@@ -1,5 +1,7 @@
 import { Bar } from "react-chartjs-2";
+import { CategoryScale, LinearScale, BarElement, Chart } from "chart.js";
 
+Chart.register(CategoryScale, LinearScale, BarElement);
 
 const PopulationGraph = ({ data }) => {
     const chartData = {
@@ -26,7 +28,7 @@ const PopulationGraph = ({ data }) => {
                     plugins: {
                      title : {
                          display: true,
-                         text: 'Population Graph',
+                         text: 'Population',
                          fontSize: 20
                      },
                      legend: {
