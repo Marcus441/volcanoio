@@ -5,7 +5,7 @@ import { AuthContext } from '../Contexts/AuthContext';
 const Navbar = () => {
     const location = useLocation();
     const navigate = useNavigate();
-    
+
     const [showComponent, setShowComponent] = useState(true)
 
     const { authToken: token, logout } = useContext(AuthContext);
@@ -31,11 +31,13 @@ const Navbar = () => {
                 <div className="links">
                     <Link to="/home">Home</Link>
                     <Link to="/volcano-list">Volcano List</Link>
-                    {!token && <>
+                    {!token &&
                         <Link to="/login"> Login</Link>
-                    </>}
+                    }
                     {
-                        token && <a onClick={handleLogout}>Logout</a>
+                        token && <button className="logout-button" onClick={handleLogout}>
+                            Logout
+                        </button>
                     }
                 </div>
             </nav>

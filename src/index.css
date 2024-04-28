@@ -46,34 +46,13 @@ code {
   margin-left: auto;
 }
 
-.navbar a {
+.navbar a, .navbar button{
   margin-left: 16px;
   text-decoration: none;
-  padding: 6px;
 }
 
-.navbar a:hover {
+.navbar a:hover, .navbar button:hover{
   color: #5e35f1;
-}
-
-/* home */
-.volcano-preview {
-  border-bottom: 1px solid #fafafa;
-  padding: 10px 16px;
-  margin: 20px 0;
-}
-
-.volcano-preview:hover {
-  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
-}
-
-.volcano-preview h2 {
-  font-size: 20px;
-  margin-bottom: 8px;
-}
-
-.volcano-preview a {
-  text-decoration: none;
 }
 
 /* volcano list */

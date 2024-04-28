@@ -1,6 +1,6 @@
 import RegisterForm from '../Components/RegisterForm';
 import { useNavigate } from 'react-router-dom';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { AuthContext } from '../Contexts/AuthContext';
 
 const Register = () => {
