@@ -15,18 +15,16 @@ function App() {
     <AuthProvider>
       <Router>
         <div className="App">
-          <div className="content">
-            <Navbar />
+            <Navbar /> 
             <Routes>
               <Route path="*" element={<h1>Not Found</h1>} />
               <Route path="/" element={<Home />} />
-              <Route path="/volcano-list" element={<VolcanoList />} />
-              <Route path="/volcano/:id" element={<Volcano />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
+              <Route path="/volcano-list" element={<div className="content"><VolcanoList /></div>} />
+              <Route path="/volcano/:id" element={<div className="content"><Volcano /></div>} />
+              <Route path="/login" element={<div className="content"><Login /></div>} />
+              <Route path="/register" element={<div className="content"><Register /></div>} />
             </Routes>
           </div>
-        </div>
       </Router>
     </AuthProvider>
 

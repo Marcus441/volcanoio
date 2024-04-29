@@ -31,13 +31,19 @@ code {
   padding: 20px;
 }
 
+#landing-page.landing-page {
+  background-image: url('../public/hero.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 /* navbar */
 
 .navbar {
+  max-width: 800px;
   padding: 20px;
   display: flex;
   align-items: center;
-  max-width: 800px;
   margin: 0 auto;
   border-bottom: 1px solid #f2f2f2;
 }
