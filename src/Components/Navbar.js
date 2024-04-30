@@ -27,7 +27,7 @@ const Navbar = () => {
     return (
         showComponent && (
             <nav className="navbar">
-                <header ><h1>Volcano.io</h1></header>
+                <header><h1 className="text-2xl">Volcano.io</h1></header>
                 <div className="links">
                     <Link to="/">Home</Link>
                     <Link to="/volcano-list">Volcano List</Link>
