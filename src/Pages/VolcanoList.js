@@ -28,13 +28,13 @@ function VolcanoList() {
             <div className="search-params">
                 <SearchBar onSearch={handleSearch}></SearchBar>
                 <div>
-                    <label>Populated Within:</label>
+                    <label>Population within:</label>
                     <DropDown options={['', '5km', '10km', '30km', '100km']} onChange={setpopulatedWithin}></DropDown>
                 </div>
             </div>
             {error && <div>{error}</div>}
             {pending && <div>Loading...</div>}
-            {data && <Volcanoes volcanoes={data} />}
+            {(data && !pending) && <Volcanoes volcanoes={data} />}
         </div>
 
     );

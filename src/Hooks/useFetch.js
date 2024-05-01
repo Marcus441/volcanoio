@@ -24,6 +24,8 @@ const useFetch = (url) => {
             options.headers['Authorization'] = `Bearer ${token}`;
         }
 
+        setPending(true);
+
         fetch(url, options)
             .then(res => {
                 if (!res.ok) {
