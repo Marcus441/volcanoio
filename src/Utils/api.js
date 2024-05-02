@@ -14,7 +14,11 @@ const authenticate = async (credentials) => {
         localStorage.setItem('token', data.token);
         return true;
     } else if (data.error) {
-        throw new Error(data.message);
+        if (data.message === 'Request body incomplete, both email and password are required') {
+            throw new Error('Both email and password are required');
+        } else
+            throw new Error(data.message);
+
     }
     return false;
 };
@@ -35,7 +39,10 @@ const register = async (credentials) => {
         localStorage.setItem('token', data.token);
         return true;
     } else if (data.error) {
-        throw new Error(data.message);
+        if (data.message === 'Request body incomplete, both email and password are required') {
+            throw new Error('Both email and password are required');
+        } else
+            throw new Error(data.message);
     }
     return false;
 };
