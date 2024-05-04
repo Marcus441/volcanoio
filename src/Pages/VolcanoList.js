@@ -28,7 +28,7 @@ function VolcanoList() {
             <div className="search-params">
                 <SearchBar onSearch={handleSearch}></SearchBar>
                 <div>
-                    <label>Population within:</label>
+                    <label>Populated within:</label>
                     <DropDown options={['', '5km', '10km', '30km', '100km']} onChange={setpopulatedWithin}></DropDown>
                 </div>
             </div>
